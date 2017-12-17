@@ -1,0 +1,21 @@
+<section class="main-header">
+  <img src="<%= asset_path "achieve.png" %>">
+</section>
+
+	<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+
+    <% @tweets.reverse_each do |tweet| %>
+     <div class="row">
+      <p><%= simple_format(tweet.content) %></p>
+	　<div style="text-align:right"><%= tweet.created_at.strftime("%Y年%m月%d日 %H時%M分") %></div>
+      <%= link_to "編集", edit_tweet_path(tweet.id), class: 'btn btn-sm btn-success' %>
+      <%= link_to "削除", tweet_path(tweet.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-sm btn-danger' %>
+     </div>
+    <% end %>
+  </div>
+</div>
+</div>
+

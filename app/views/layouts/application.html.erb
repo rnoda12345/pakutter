@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pakutter</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+  <header>
+    <ul>
+		<li><div style="text-align:right"><%= link_to "つぶやく", new_tweet_path, class: 'btn btn-primary' %></div></li>
+    </ul>
+  </header>
+  
+<%= yield %>
+
+</body>
+</html>
